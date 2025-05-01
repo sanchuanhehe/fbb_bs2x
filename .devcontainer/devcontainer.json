@@ -27,7 +27,8 @@
         "xaver.clang-format",
         "MS-CEINTL.vscode-language-pack-zh-hans",
         "GitHub.copilot-chat",
-        "DavidAnson.vscode-markdownlint"
+        "DavidAnson.vscode-markdownlint",
+        "vscode-icons-team.vscode-icons"
       ]
     }
   }
