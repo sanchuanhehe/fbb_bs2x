@@ -8,9 +8,9 @@
 
 **硬件概述：** 由于BS21E开发板IO口功能复用（全路由，任意IO口都可以复用全部功能），核心板、交通灯板。通过交通灯板上丝印可以看出是Switch与底板的MOSI相连，将核心板IO 14通过杜邦线插到MOSI插孔。硬件搭建要求如图所示：
 
-  参考[交通灯板原理图](../../../../docs/hardware/HH-D03/HiSpark_WiFi_IoT_SSL_VER.A.pdf)、[底板原理图](../../../../docs/hardware/HH-D03/HiSpark_WiFi_IoT_EXB_VER.A.pdf)、[核心板原理图](../../../../docs/hardware/HH-D03/HH-D03_原理图_V01.pdf)
+  参考[交通灯板原理图](../../doc/hardware/HiSpark_WiFi_IoT_SSL_VER.A.pdf)、[底板原理图](../../doc/hardware/HiSpark_WiFi_IoT_EXB_VER.A.pdf)、[核心板原理图](../../doc/hardware/HH-D03_原理图_V01.pdf)
 
-<img src="../../../../docs/pic/beep/image-20250317171949255-17454042737691.png" alt="image-20250317171949255" style="zoom:50%;" />
+<img src="../../doc/media/beep/image-20250317171949255-17454042737691.png" alt="image-20250317171949255" style="zoom:50%;" />
 
 ## 1.2 约束与限制
 
@@ -84,32 +84,32 @@
 
 - 步骤一：在xxx\src\application\samples\peripheral文件夹新建一个sample文件夹，在peripheral上右键选择ZeroScript-Sample，创建Sample文件夹，例如名称”buttondemo“。
 
-  ![image-20240205104416249](../../../../docs/pic/beep/image-20240801170551992.png)
+  ![image-20240205104416249](../../doc/media/beep/image-20240801170551992.png)
 - 步骤二：将xxx\vendor\HH-D03\buttondemo文件里面内容拷贝到**步骤一创建的Sample文件夹中”buttondemo“**。
 
-  ![image-20240808155814777](../../../../docs/pic/button/image-20240808155814777.png)
+  ![image-20240808155814777](../../doc/media/button/image-20240808155814777.png)
 - 步骤三：在xxx\src\application\samples\peripheral\CMakeLists.txt文件中新增编译案例，具体如下图所示（如果不知道在哪个地方加的，可以在“set(SOURCES "${SOURCES}" PARENT_SCOPE)”上面一行添加）。
 
-  ![image-20240808155959504](../../../../docs/pic/button/image-20240808155959504.png)
+  ![image-20240808155959504](../../doc/media/button/image-20240808155959504.png)
 - 步骤四：在xxx\src\application\samples\peripheral\Kconfig文件中新增编译案例，具体如下图所示（如果不知道在哪个地方加，可以在最后一行添加）。
 
-  ![image-20240808155947041](../../../../docs/pic/button/image-20240808155947041.png)
+  ![image-20240808155947041](../../doc/media/button/image-20240808155947041.png)
 - 步骤五：点击如下图标，选择KConfig，具体选择路径“Application/Enable the Sample of peripheral”，在弹出框中选择“support BUTTON Sample”，点击Save，关闭弹窗。
 
-  <img src="../../../../docs/pic/beep/image-20240801171406113.png" alt="image-20240801171406113" style="zoom: 67%;" /><img src="../../../../docs/pic/beep/image-20240205105234692-17119401758316.png" alt="image-20240205105234692" style="zoom: 50%;" /><img src="../../../../docs/pic/button/image-20240808160042906.png" alt="image-20240808160042906" style="zoom:67%;" />
+  <img src="../../doc/media/beep/image-20240801171406113.png" alt="image-20240801171406113" style="zoom: 67%;" /><img src="../../doc/media/beep/image-20240205105234692-17119401758316.png" alt="image-20240205105234692" style="zoom: 50%;" /><img src="../../doc/media/button/image-20240808160042906.png" alt="image-20240808160042906" style="zoom:67%;" />
 - 步骤六：点击“build”或者“rebuild”编译
 
-  ![img](../../../../docs/pic/button/854badb5d2ae480c8827d80c5a993c45.png)
+  ![img](../../doc/media/button/854badb5d2ae480c8827d80c5a993c45.png)
 - 步骤七：编译完成如下图所示。
 
-  ![image-20250307164622717](../../../../docs/pic/button/image-20250307164622717.png)
+  ![image-20250307164622717](../../doc/media/button/image-20250307164622717.png)
 - 步骤八：在HiSpark Studio工具中点击“工程配置”按钮，选择“程序加载”，传输方式选择“serial”，端口选择“comxxx”，com口在设备管理器中查看（如果找不到com口，请参考windows环境搭建）。
 
-  ![image-20250317173145978](../../../../docs/pic/tools/image-20250317173145978.png)
+  ![image-20250317173145978](../../doc/media/tools/image-20250317173145978.png)
 - 步骤九：配置完成后，点击工具“程序加载”按钮烧录。
 
-  ![image-20240801174117545](../../../../docs/pic/beep/image-20240801174117545.png)
+  ![image-20240801174117545](../../doc/media/beep/image-20240801174117545.png)
 - 步骤十：出现“Connecting, please reset device...”字样时，复位开发板，等待烧录结束。
 
-  ![image-20250317173240745](../../../../docs/pic/tools/image-20240801174230202.png)
+  ![image-20250317173240745](../../doc/media/tools/image-20240801174230202.png)
 - 步骤七“软件烧录成功后，按一下开发板的RESET按键复位开发板，可以通过主板上的按键控制LED灯亮灭。
