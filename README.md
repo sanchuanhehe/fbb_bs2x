@@ -32,8 +32,8 @@
 
 | 开发板型号                              | 案例开发指南                                                 | 硬件资料                                                     |
 | --------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| HH-D03开发板（润和软件）                | [润和开发板星闪案例开发指南](vendor/HH-D03/demo)             | [HH-D03开发板硬件原理图及HH-D03 星闪开发板规格说明书](docs/hardware/HH-D03/HH-D03_原理图_V01.pdf) |
-| BearPi-Pico_H2821E开发板（小熊派）      | [小熊派开发板星闪案例开发指南](vendor/BearPi-Pico_H2821E/doc/README.md) | [BearPi-Pico_H2821E开发板硬件原理图](docs/hardware/BearPi-Pico_H2821E/BearPi-Pico_H2821E_原理图_V01.pdf) |
+| HH-D03开发板（润和软件）                | [润和开发板星闪案例开发指南](vendor/HH-D03/demo)             | [HH-D03开发板硬件原理图及HH-D03 星闪开发板规格说明书](vendor/HH-D03/doc/hardware) |
+| BearPi-Pico_H2821E开发板（小熊派）      | [小熊派开发板星闪案例开发指南](vendor/BearPi-Pico_H2821E/doc/README.md) | [BearPi-Pico_H2821E开发板硬件原理图](vendor/BearPi-Pico_H2821E/doc/hardware/) |
 | DK221星闪2K鼠标完整解决方案（方格电子） | 暂不提供                                                     | 暂不提供                                                     |
 
 ## 示例教程
