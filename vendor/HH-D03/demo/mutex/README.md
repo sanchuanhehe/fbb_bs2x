@@ -6,9 +6,9 @@
 
 **软件概述：** 互斥锁又称互斥型信号量，是一种特殊的二值性信号量，用于实现对共享资源的独占式处理。任意时刻互斥锁的状态只有两种：闭锁，当有任务持有时，这个任务获得该互斥锁的所有权；开锁，当该任务释放它时，该互斥锁被开锁，任务失去该互斥锁的所有权。当一个任务持有互斥锁时，其他任务将不能再对该互斥锁进行开锁或持有。多任务环境下往往存在多个任务竞争同一共享资源的应用场景，互斥锁可被用于对共享资源的保护从而实现独占式访问。
 
-**硬件概述：**[核心板原理图](../../../../docs/hardware/HH-D03/HH-D03_原理图_V01.pdf)。硬件搭建要求如图所示：
+**硬件概述：**[核心板原理图](../../doc/hardware/HH-D03_原理图_V01.pdf)。硬件搭建要求如图所示：
 
-<img src="../../../../docs/pic/tools/image-20250422184625049.png" alt="image-20240226173007100" style="zoom: 67%;" />
+<img src="../../doc/media/tools/image-20250422184625049.png" alt="image-20240226173007100" style="zoom: 67%;" />
 
 ## 1.2 约束与限制
 
@@ -26,7 +26,7 @@
 
 ## 1.3 效果预览
 
-![image-20240401153146328](../../../../docs/pic/mutex/image-20240401153146328.png)
+![image-20240401153146328](../../doc/media/mutex/image-20240401153146328.png)
 
 ## 1.4 接口说明
 
@@ -86,34 +86,34 @@
 
 - 步骤一：在xxx\src\application\samples\peripheral文件夹新建一个sample文件夹，在peripheral上右键选择“新建文件夹”，创建Sample文件夹，例如名称”mutex“。
 
-  ![image-70551992](../../../../docs/pic/message/image-20240801170551992-17228219869641.png)
+  ![image-70551992](../../doc/media/message/image-20240801170551992-17228219869641.png)
 - 步骤二：将xxx\vendor\HH-D03\mutex文件里面内容拷贝到**步骤一创建的Sample文件夹中”mutex“**。
 
-  ![image-20240401155957848](../../../../docs/pic/mutex/image-20240401155957848.png)
+  ![image-20240401155957848](../../doc/media/mutex/image-20240401155957848.png)
 - 步骤三：在xxx\src\application\samples\peripheral\CMakeLists.txt文件中新增编译案例，具体如下图所示（如果不知道在哪个地方加的，可以在“set(SOURCES "${SOURCES}" PARENT_SCOPE)”上面一行添加）。
 
-  ![image-20240805094616844](../../../../docs/pic/mutex/image-20240805094616844.png)
+  ![image-20240805094616844](../../doc/media/mutex/image-20240805094616844.png)
 - 步骤四：在xxx\src\application\samples\peripheral\Kconfig文件中新增编译案例，具体如下图所示（如果不知道在哪个地方加，可以在最后一行添加）。
 
-  ![image-20240805094733456](../../../../docs/pic/mutex/image-20240805094733456.png)
+  ![image-20240805094733456](../../doc/media/mutex/image-20240805094733456.png)
 - 步骤五：点击如下图标，选择KConfig，具体选择路径“Application/Enable the Sample of peripheral”，在弹出框中选择“support MUTEX Sample”，点击Save，关闭弹窗。
 
-  <img src="../../../../docs/pic/mutex/image-20240801171406113.png" alt="image-20240801171406113" style="zoom: 50%;" /><img src="../../../../docs/pic/beep/image-20240205105234692-17119401758316.png" alt="image-20240205105234692" style="zoom: 50%;" /><img src="../../../../docs/pic/mutex/image-20240401154052776.png" alt="image-20240401154052776" style="zoom:50%;" />
+  <img src="../../doc/media/mutex/image-20240801171406113.png" alt="image-20240801171406113" style="zoom: 50%;" /><img src="../../doc/media/beep/image-20240205105234692-17119401758316.png" alt="image-20240205105234692" style="zoom: 50%;" /><img src="../../doc/media/mutex/image-20240401154052776.png" alt="image-20240401154052776" style="zoom:50%;" />
 - 步骤六：点击“build”或者“rebuild”编译
 
-  ![image-20240801112427220](../../../../docs/pic/tools/854badb5d2ae480c8827d80c5a993c45.png)
+  ![image-20240801112427220](../../doc/media/tools/854badb5d2ae480c8827d80c5a993c45.png)
 - 步骤七：编译完成如下图所示。
 
-  ![image-20240801165456569](../../../../docs/pic/tools/image-20250307164622717.png)
+  ![image-20240801165456569](../../doc/media/tools/image-20250307164622717.png)
 - 步骤八：在HiSpark Studio工具中点击“工程配置”按钮，选择“程序加载”，传输方式选择“serial”，端口选择“comxxx”，com口在设备管理器中查看（如果找不到com口，请参考windows环境搭建）。
 
-  ![image-20240801173929658](../../../../docs/pic/tools/image-20250317173145978.png)
+  ![image-20240801173929658](../../doc/media/tools/image-20250317173145978.png)
 - 步骤九：配置完成后，点击工具“程序加载”按钮烧录。
 
-  ![image-20240801174117545](../../../../docs/pic/beep/image-20240801174117545.png)
+  ![image-20240801174117545](../../doc/media/beep/image-20240801174117545.png)
 - 步骤十：出现“Connecting, please reset device...”字样时，复位开发板，等待烧录结束。
 
-  ![image-20240801174230202](../../../../docs/pic/tools/image-20240801174230202.png)
+  ![image-20240801174230202](../../doc/media/tools/image-20240801174230202.png)
 - 步骤十一：软件烧录成功后，按一下开发板的RESET按键复位开发板，烧录完成后，串口打印信息如下。
 
-  ![image-20240401153146328](../../../../docs/pic/mutex/image-20240401153146328.png)
+  ![image-20240401153146328](../../doc/media/mutex/image-20240401153146328.png)

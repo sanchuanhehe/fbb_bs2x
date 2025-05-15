@@ -13,35 +13,35 @@
 
   - 第一种方式通过git指令下载（在Windows上使用git指令下载代码，需要提前安装git，  [Git下载链接地址：https://git-scm.com/downloads/win](https://git-scm.com/downloads/win)），在xx盘鼠标右键选择“Open Git Bash here”，如下图所所示（**建议在D盘、E盘根目录执行**）
 
-    ![image-20250307160531260](../docs/pic/tools/image-20250307160531260.png)
+    ![image-20250307160531260](../vendor/HH-D03/doc/media/tools/image-20250307160531260.png)
 
   - 在命令框中输入`git clone https://gitee.com/HiSpark/fbb_bs2x.git`指令下载代码，等待下载完成。
   
-    ![image-20250422140253818](../docs/pic/tools/image-20250422140253818.png)
+    ![image-20250422140253818](../vendor/HH-D03/doc/media/tools/image-20250422140253818.png)
   
 
-​					![image-20250422140517678](../docs/pic/tools/image-20250422140517678.png)
+​					![image-20250422140517678](../vendor/HH-D03/doc/media/tools/image-20250422140517678.png)
 
 - 第二种方式ZIP下载方式如下：
 
   -  SDK包下载地址：https://gitee.com/HiSpark/fbb_bs2x，在主界面上点击“克隆/下载”，选择“下载ZIP”，等待下载，下载完成如下。
 
-    ![image-20250422140834890](../docs/pic/tools/image-20250422140834890.png)
+    ![image-20250422140834890](../vendor/HH-D03/doc/media/tools/image-20250422140834890.png)
 
   
   * 解压“fbb_bs2x-master.zip”，**在解压过程中需要关闭电脑杀毒软件**（**防止有些文件当做病毒被删除掉**），解压方式选择“Extract Here”即可（**建议解压到D盘、E盘等根目录，路径不要太深，且不要有中文路径**）
   
-    ![image-20250422140320273](../docs/pic/tools/image-20250422140320273.png)
+    ![image-20250422140320273](../vendor/HH-D03/doc/media/tools/image-20250422140320273.png)
   
 ## 新建工程
 
 * 代码下载完成后，打开HiSpark studio工具，点击“新建工程”。
 
-  ![image-20240801104223178](../docs/pic/tools/image-20240801104223178.png)
+  ![image-20240801104223178](../vendor/HH-D03/doc/media/tools/image-20240801104223178.png)
 
 * 新建工程界面中芯片：“BS21E”，工程名：“xxx”（用户自定义，但是不能带中文，特殊符号），软件包：“xxx/fbb_bs2x/src”（**SDK软件包存放路径，这个地方一定要选到src层级，否则编译会失败**），配置选择完成后，点击“完成按钮”。
 
-  ![image-20250422142659591](../docs/pic/tools/image-20250422142659591.png)
+  ![image-20250422142659591](../vendor/HH-D03/doc/media/tools/image-20250422142659591.png)
 
 * 修改drivers\chips\bs2x\main_init\main_init.c文件，将下面的这段代码替换源文件内容，原因：方便通过typec口查看数据
 
@@ -614,39 +614,39 @@
   
 * 点击“build”或者“rebuild”编译（**编译建议关闭杀毒软件，不关可能会导致编译时间长**）
 
-  ![img](../docs/pic/tools/854badb5d2ae480c8827d80c5a993c45.png)
+  ![img](../vendor/HH-D03/doc/media/tools/854badb5d2ae480c8827d80c5a993c45.png)
 
 * 编译完成如下图所示。
 
-  ![image-20250307164622717](../docs/pic/tools/image-20250307164622717.png)
+  ![image-20250307164622717](../vendor/HH-D03/doc/media/tools/image-20250307164622717.png)
 
   ## 镜像烧录
 
 - 硬件搭建：Typec线将板端与PC端连接
 
-  ![image-20240801173105245](../docs/pic/tools/image-20250422184625049.png)
+  ![image-20240801173105245](../vendor/HH-D03/doc/media/tools/image-20250422184625049.png)
 
 - 安装驱动“CH341SER驱动”（[CH341SER驱动下载地址](https://www.wch.cn/downloads/CH341SER_EXE.html)，**如果该链接失效或者无法下载，用户自行百度下载即可**），安装CH341SER驱动，安装前单板需要与PC端相连，点击安装即可，显示**驱动安装成功代表成功**，如果出现**驱动预安装成功代表安装失败**
 
-    ![image-20240801173439645](../docs/pic/tools/image-20240801173439645.png)
+    ![image-20240801173439645](../vendor/HH-D03/doc/media/tools/image-20240801173439645.png)
 
-    ![image-20240801173618611](../docs/pic/tools/image-20240801173618611.png)
+    ![image-20240801173618611](../vendor/HH-D03/doc/media/tools/image-20240801173618611.png)
 
 - 安装成功后，在HiSpark Studio工具中点击“工程配置”按钮，选择“程序加载”，传输方式选择“serial”，端口选择“comxxx”，com口在设备管理器中查看。
 
-    ![image-20240801173929658](../docs/pic/tools/image-20250317173145978.png)
+    ![image-20240801173929658](../vendor/HH-D03/doc/media/tools/image-20250317173145978.png)
 
 - 配置完成后，点击工具“程序加载”按钮烧录。
 
-    ![image-20240801174117545](../docs/pic/tools/image-20240801174117545.png)
+    ![image-20240801174117545](../vendor/HH-D03/doc/media/tools/image-20240801174117545.png)
 
 - 出现“Connecting, please reset device...”字样时，复位开发板，等待烧录结束。
 
-    ![image-20240801174230202](../docs/pic/tools/image-20240801174230202.png)
+    ![image-20240801174230202](../vendor/HH-D03/doc/media/tools/image-20240801174230202.png)
 
 -  在HiSpark Studio底端选择“监视器”，选择端口（**开发板需要与电脑通过typec连接**），如果没有端口显示可以刷新一下，点击“开始监视”，复位开发板，出现“flashboot version”字样代表编译烧录成功
 
-![image-20250422182810201](../docs/pic/tools/image-20250422182810201.png)
+![image-20250422182810201](../vendor/HH-D03/doc/media/tools/image-20250422182810201.png)
 
 ## FAQ
 -  如果根据文档没有编译成功，请参考https://developers.hisilicon.com/postDetail?tid=02110170392979486020

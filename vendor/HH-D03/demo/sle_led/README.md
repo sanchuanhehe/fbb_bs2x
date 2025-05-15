@@ -6,9 +6,9 @@
 
 **硬件概述：** 核心板。硬件搭建要求如图所示：
 
-  参考[交通灯板原理图](../../../../docs/hardware/HH-D03/HiSpark_WiFi_IoT_SSL_VER.A.pdf)、[底板原理图](../../../../docs/hardware/HH-D03/HiSpark_WiFi_IoT_EXB_VER.A.pdf)、[核心板原理图](../../../../docs/hardware/HH-D03/HH-D03_原理图_V01.pdf)
+  参考[交通灯板原理图](../../doc/hardware/HiSpark_WiFi_IoT_SSL_VER.A.pdf)、[底板原理图](../../doc/hardware/HiSpark_WiFi_IoT_EXB_VER.A.pdf)、[核心板原理图](../../doc/hardware/HH-D03_原理图_V01.pdf)
 
-<img src="../../../../docs/pic/beep/image-20250317171949255-17454042737691.png" alt="image-20250317171949255" style="zoom:50%;" />
+<img src="../../doc/media/beep/image-20250317171949255-17454042737691.png" alt="image-20250317171949255" style="zoom:50%;" />
 
 ## 1.2 约束与限制
 
@@ -28,7 +28,7 @@
 
 Client端接收数据：
 
-![image](../../../../docs/pic/sle_led/image.png)
+![image](../../doc/media/sle_led/image.png)
 
 ​	每隔500毫秒，Server会通过星闪连接发送消息，来控制Client端交通灯板上的3个LED灯的亮/灭状态。
 
@@ -108,35 +108,35 @@ Grant Node： 步骤 1 调用 enable_sle，打开 SLE 开关。
 
 * 步骤一：在xxx\src\application\samples\peripheral文件夹新建一个sample文件夹，在peripheral上右键选择“新建文件夹”，创建Sample文件夹，例如名称”sle_led“。
 
-  ![image-70551992](../../../../docs/pic/beep/image-20240801170551992.png)
+  ![image-70551992](../../doc/media/beep/image-20240801170551992.png)
 * 步骤二：将xxx\vendor\HH-D03\sle_led文件里面内容拷贝到**步骤一创建的Sample文件夹中”sle_led“**下。
 
-  ![image-20240403100728566](../../../../docs/pic/sle_led/image-20240403100728566.png)
+  ![image-20240403100728566](../../doc/media/sle_led/image-20240403100728566.png)
 * 步骤三：在xxx\src\application\samples\peripheral\CMakeLists.txt文件中新增编译案例，具体如下图所示（如果不知道在哪个地方加的，可以在“set(SOURCES "${SOURCES}" PARENT_SCOPE)”上面一行添加）。
 
-  ![image_20240808184434](../../../../docs/pic/sle_led/image_20240808184434.png)
+  ![image_20240808184434](../../doc/media/sle_led/image_20240808184434.png)
 * 步骤四：在xxx\src\application\samples\peripheral\Kconfig文件中新增编译案例，具体如下图所示（如果不知道在哪个地方加，可以在最后一行添加）。
 
-  ![image_20240808184555](../../../../docs/pic/sle_led/image_20240808184555.png)
+  ![image_20240808184555](../../doc/media/sle_led/image_20240808184555.png)
 * 步骤五：点击如下图标，选择”**系统配置**“，具体选择路径“Application/Enable the Sample of peripheral”，如果选择编译serverd端，选中“support  SLE_LED_SERVER Sample”；如果选择编译client端，选中“support SLE_LED_CLIENT Sample”。（需要准备两块开发板，选择不同的编译选项，烧录不同的镜像）（
 
-  ![image_20240808164723](../../../../docs/pic/sle_led/image_20240808164723.png)
-  ![image_20240808164731](../../../../docs/pic/sle_led/image_20240808164731.png)
+  ![image_20240808164723](../../doc/media/sle_led/image_20240808164723.png)
+  ![image_20240808164731](../../doc/media/sle_led/image_20240808164731.png)
 
 - 步骤六：点击“build”或者“rebuild”编译
 
-  ![image-20240801112427220](../../../../docs/pic/tools/854badb5d2ae480c8827d80c5a993c45.png)
+  ![image-20240801112427220](../../doc/media/tools/854badb5d2ae480c8827d80c5a993c45.png)
 - 步骤七：编译完成如下图所示。
 
-  ![image-20240801165456569](../../../../docs/pic/tools/image-20250307164622717.png)
+  ![image-20240801165456569](../../doc/media/tools/image-20250307164622717.png)
 - 步骤八：在HiSpark Studio工具中点击“工程配置”按钮，选择“程序加载”，传输方式选择“serial”，端口选择“comxxx”，com口在设备管理器中查看（如果找不到com口，请参考windows环境搭建）。
 
-  ![image-20240801173929658](../../../../docs/pic/tools/image-20250317173145978.png)
+  ![image-20240801173929658](../../doc/media/tools/image-20250317173145978.png)
 - 步骤九：配置完成后，点击工具“程序加载”按钮烧录。
 
-  ![image-20240801174117545](../../../../docs/pic/beep/image-20240801174117545.png)
+  ![image-20240801174117545](../../doc/media/beep/image-20240801174117545.png)
 - 步骤十：出现“Connecting, please reset device...”字样时，复位开发板，等待烧录结束。
 
-  ![image-20240801174230202](../../../../docs/pic/tools/image-20240801174230202.png)
+  ![image-20240801174230202](../../doc/media/tools/image-20240801174230202.png)
 
 * 步骤十一：复位两块开发板，等待建立连接后client端的交通信号灯会一直闪烁。
