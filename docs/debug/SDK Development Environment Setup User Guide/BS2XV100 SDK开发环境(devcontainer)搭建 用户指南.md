@@ -10,6 +10,7 @@
 
 - 访问 [VSCode 官网](https://code.visualstudio.com/) 下载并安装 VSCode。
 - 推荐安装 Remote Development 插件包（包含 Remote - WSL、Remote - Containers、Remote - SSH）。
+- 需要安装 [ms-vscode-remote.remote-containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) 插件。
 
 ### 1.2 安装 Docker
 
