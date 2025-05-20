@@ -6,9 +6,9 @@
 
 **软件概述：** 信号量（Semaphore）是一种实现任务间通信的机制，实现任务之间同步或临界资源的互斥访问。常用于协助一组相互竞争的任务来访问临界资源。在多任务系统中，各任务之间需要同步或互斥实现临界资源的保护，信号量功能可以为用户提供这方面的支持。通常一个信号量的计数值用于对应有效的资源数表示剩下的可被占用的互斥资源数。
 
-**硬件概述：**[核心板原理图](../../../../docs/hardware/HH-D03/HH-D03_原理图_V01.pdf)。硬件搭建要求如图所示：
+**硬件概述：**[核心板原理图](../../doc/hardware/HH-D03_原理图_V01.pdf)。硬件搭建要求如图所示：
 
-<img src="../../../../docs/pic/tools/image-20250422184625049.png" alt="image-20240226173007100" style="zoom: 67%;" />
+<img src="../../doc/media/tools/image-20250422184625049.png" alt="image-20240226173007100" style="zoom: 67%;" />
 
 ## 1.2 约束与限制
 
@@ -26,7 +26,7 @@
 
 ## 1.3 效果预览
 
-![image-20240401171259237](../../../../docs/pic/semaphore/image-20240401171259237.png)
+![image-20240401171259237](../../doc/media/semaphore/image-20240401171259237.png)
 
 ## 1.4 接口说明
 
@@ -101,35 +101,35 @@
 
 - 步骤一：在xxx\src\application\samples\peripheral文件夹新建一个sample文件夹，在peripheral上右键选择“新建文件夹”，创建Sample文件夹，例如名称”semaphore“。
 
-  ![image-70551992](../../../../docs/pic/oled/image-20240801170551992-17228250453191.png)
+  ![image-70551992](../../doc/media/oled/image-20240801170551992-17228250453191.png)
 - 步骤二：将xxx\vendor\HH-D03\semaphore文件里面内容拷贝到**步骤一创建的Sample文件夹中”semaphore“**。
 
-![image-20240401162502575](../../../../docs/pic/semaphore/image-20240401162502575.png)
+![image-20240401162502575](../../doc/media/semaphore/image-20240401162502575.png)
 
 - 步骤三：在xxx\src\application\samples\peripheral\CMakeLists.txt文件中新增编译案例，具体如下图所示（如果不知道在哪个地方加的，可以在“set(SOURCES "${SOURCES}" PARENT_SCOPE)”上面一行添加）。
 
-  ![image-20240805103314839](../../../../docs/pic/semaphore/image-20240805103314839.png)
+  ![image-20240805103314839](../../doc/media/semaphore/image-20240805103314839.png)
 - 步骤四：在xxx\src\application\samples\peripheral\Kconfig文件中新增编译案例，具体如下图所示（如果不知道在哪个地方加，可以在最后一行添加）。
 
-  ![image-20240805103330471](../../../../docs/pic/semaphore/image-20240805103330471.png)
+  ![image-20240805103330471](../../doc/media/semaphore/image-20240805103330471.png)
 - 步骤五：点击如下图标，选择KConfig，具体选择路径“Application/Enable the Sample of peripheral”，在弹出框中选择“support SEMAPHORE Sample”，点击Save，关闭弹窗。
 
-  <img src="../../../../docs/pic/beep/image-20240801171406113.png" alt="image-20240801171406113" style="zoom: 50%;" /><img src="../../../../docs/pic/oled/image-20240205105234692-17119401758316-17228251215953.png" alt="image-20240205105234692" style="zoom: 50%;" /><img src="../../../../docs/pic/semaphore/image-20240401162820928.png" alt="image-20240401162820928" style="zoom:67%;" />
+  <img src="../../doc/media/beep/image-20240801171406113.png" alt="image-20240801171406113" style="zoom: 50%;" /><img src="../../doc/media/oled/image-20240205105234692-17119401758316-17228251215953.png" alt="image-20240205105234692" style="zoom: 50%;" /><img src="../../doc/media/semaphore/image-20240401162820928.png" alt="image-20240401162820928" style="zoom:67%;" />
 - 步骤六：点击“build”或者“rebuild”编译
 
-  ![image-20240801112427220](../../../../docs/pic/tools/854badb5d2ae480c8827d80c5a993c45.png)
+  ![image-20240801112427220](../../doc/media/tools/854badb5d2ae480c8827d80c5a993c45.png)
 - 步骤七：编译完成如下图所示。
 
-  ![image-20240801165456569](../../../../docs/pic/tools/image-20250307164622717.png)
+  ![image-20240801165456569](../../doc/media/tools/image-20250307164622717.png)
 - 步骤八：在HiSpark Studio工具中点击“工程配置”按钮，选择“程序加载”，传输方式选择“serial”，端口选择“comxxx”，com口在设备管理器中查看（如果找不到com口，请参考windows环境搭建）。
 
-  ![image-20240801173929658](../../../../docs/pic/tools/image-20250317173145978.png)
+  ![image-20240801173929658](../../doc/media/tools/image-20250317173145978.png)
 - 步骤九：配置完成后，点击工具“程序加载”按钮烧录。
 
-  ![image-20240801174117545](../../../../docs/pic/beep/image-20240801174117545.png)
+  ![image-20240801174117545](../../doc/media/beep/image-20240801174117545.png)
 - 步骤十：出现“Connecting, please reset device...”字样时，复位开发板，等待烧录结束。
 
-  ![image-20240801174230202](../../../../docs/pic/tools/image-20240801174230202.png)
+  ![image-20240801174230202](../../doc/media/tools/image-20240801174230202.png)
 - 步骤十一：软件烧录成功后，按一下开发板的RESET按键复位开发板，烧录完成后，串口打印信息如下。
 
-  ![image-20240401171259237](../../../../docs/pic/semaphore/image-20240401171259237.png)
+  ![image-20240401171259237](../../doc/media/semaphore/image-20240401171259237.png)

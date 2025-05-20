@@ -4,8 +4,7 @@
 
 ## 产品概述
 
-
-<img src="../../docs/pic/BearPi-Pico_H2821E/pico-1.png"  width="150">
+<img src="media/BearPi-Pico_H2821E/pico-1.png"  width="150">
 
 
 
@@ -98,7 +97,7 @@ BearPi-Pico H2821E是一款基于高度集成 2.4GHz SoC BLE&SLE为主控芯片�
 
 
 
-<img src="../../docs/pic/BearPi-Pico_H2821E/image.png" width="250" >
+<img src="media/BearPi-Pico_H2821E/image.png" width="250" >
 
 | 编号 | 功能            | 说明                                                                                        |
 | :--- | :-------------- | :------------------------------------------------------------------------------------------ |

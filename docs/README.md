@@ -30,4 +30,3 @@
 | tool     | <a href="tool/BurnTool User Guide/BS2XV100 BurnTool工具 使用指导书.md">BurnTool User Guide</a> | BS2XV100 BurnTool工具 使用指导书      |
 | tool     | <a href="tool/HiSpark Studio User Guide/BS2XV100 HiSpark Studio 使用指南.md">HiSpark Studio User Guide</a> | BS2XV100 HiSpark Studio 使用指南      |
 |          | [IO复用关系表](IO复用关系表.md)                              | IO功能复用                            |
-| hardware | <a href="hardware/HH-D03/HH-D03_原理图_V01.pdf">HH-D03</a>   | HH-D03硬件原理图                      |
